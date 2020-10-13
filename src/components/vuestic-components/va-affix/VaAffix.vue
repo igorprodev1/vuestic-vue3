@@ -23,11 +23,10 @@ import {
   handleThrottledEvent,
   useEventsHandlerWithThrottle,
   getWindowHeight,
-  State, Context
+  State, Context,
 } from './VaAffix-utils'
 import { makeContextablePropsMixin } from '../../context-test/context-provide/ContextPlugin'
 import { Options } from 'vue-class-component'
-
 
 const AffixPropsMixin = makeContextablePropsMixin({
   offsetTop: { type: Number, default: undefined },

@@ -4374,6 +4374,11 @@ flat-cache@^2.0.1:
     rimraf "2.6.3"
     write "1.0.3"
 
+flatpickr@^4.6.6:
+  version "4.6.6"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.6.tgz#34d2ad80adfa34254e62583a34264d472f1038d6"
+  integrity sha512-EZ48CJMttMg3maMhJoX+GvTuuEhX/RbA1YeuI19attP3pwBdbYy6+yqAEVm0o0hSBFYBiLbVxscLW6gJXq6H3A==
+
 flatted@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
@@ -5942,6 +5947,11 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
+medium-editor@^5.23.3:
+  version "5.23.3"
+  resolved "https://registry.yarnpkg.com/medium-editor/-/medium-editor-5.23.3.tgz#6fb638759ae2fc76c423feb056f346d9c518d3b7"
+  integrity sha512-he9/TdjX8f8MGdXGfCs8AllrYnqXJJvjNkDKmPg3aPW/uoIrlRqtkFthrwvmd+u4QyzEiadhCCM0EwTiRdUCJw==
+
 memfs@^3.1.2:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/memfs/-/memfs-3.2.0.tgz#f9438e622b5acd1daa8a4ae160c496fdd1325b26"
@@ -6889,6 +6899,11 @@ pnp-webpack-plugin@^1.6.4:
   integrity sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
   dependencies:
     ts-pnp "^1.1.6"
+
+popper.js@^1.16.0:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
 
 portfinder@^1.0.26:
   version "1.0.28"
@@ -8984,6 +8999,15 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+v-tooltip@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-2.0.3.tgz#34fd64096656f032b1616567bf62f6165c57d529"
+  integrity sha512-KZZY3s+dcijzZmV2qoDH4rYmjMZ9YKGBVoUznZKQX0e3c2GjpJm3Sldzz8HHH2Ud87JqhZPB4+4gyKZ6m98cKQ==
+  dependencies:
+    lodash "^4.17.15"
+    popper.js "^1.16.0"
+    vue-resize "^0.4.5"
+
 v8-compile-cache@^2.0.3:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.1.1.tgz#54bc3cdd43317bca91e35dcaf305b1a7237de745"
@@ -9028,6 +9052,11 @@ vue-book@0.1.0-alpha.42:
   dependencies:
     tslib "^2.0.0"
 
+vue-bulma-expanding@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vue-bulma-expanding/-/vue-bulma-expanding-0.0.1.tgz#fcf71c2e8ef09157175bd5187eb71b3ce75a2229"
+  integrity sha1-/PccLo7wkVcXW9UYfrcbPOdaIik=
+
 vue-class-component@../vue-class-component:
   version "8.0.0-beta.4"
 
@@ -9052,6 +9081,13 @@ vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.1.0:
     espree "^6.2.1"
     esquery "^1.0.1"
     lodash "^4.17.15"
+
+vue-flatpickr-component@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/vue-flatpickr-component/-/vue-flatpickr-component-9.0.2.tgz#15e15b49279f680c6458de98d16611a377e1a27d"
+  integrity sha512-nVKjSgvcH/DJtk8FhB1MGw0Qv8RZxZSYi1Wnje/FWoXZFgkoO3VE6dGZKbYZtNPv0RyRk6Lr7PB1LIODQcYgxw==
+  dependencies:
+    flatpickr "^4.6.6"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
@@ -9083,6 +9119,11 @@ vue-property-decorator@^9.0.2:
   resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-9.0.2.tgz#118459d77b4d5613ab2bbccba2edd5d7af685d30"
   integrity sha512-mxuJHfUGs/3rUyFj2vykDIvYXCUKBrzhemm7mT8dE9QYTbNA/4qVQ5gwhNCIkKyQc8RQIXQ+0jriqinUDuuU9w==
 
+vue-resize@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/vue-resize/-/vue-resize-0.4.5.tgz#4777a23042e3c05620d9cbda01c0b3cc5e32dcea"
+  integrity sha512-bhP7MlgJQ8TIkZJXAfDf78uJO+mEI3CaLABLjv0WNzr4CcGRGPIAItyWYnP6LsPA4Oq0WE+suidNs6dgpO4RHg==
+
 vue-router@^4.0.0-beta.13:
   version "4.0.0-beta.13"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.0-beta.13.tgz#4611d09a9e44f231cc401ecc294a7f2dcb30e6a6"
@@ -9109,6 +9150,11 @@ vue@^3.0.0:
     "@vue/compiler-dom" "3.0.0"
     "@vue/runtime-dom" "3.0.0"
     "@vue/shared" "3.0.0"
+
+vuelidate@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.7.5.tgz#ff48c75ae9d24ea24c24e9ea08065eda0a0cba0a"
+  integrity sha512-GAAG8QAFVp7BFeQlNaThpTbimq3+HypBPNwdkCkHZZeVaD5zmXXfhp357dcUJXHXTZjSln0PvP6wiwLZXkFTwg==
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"
