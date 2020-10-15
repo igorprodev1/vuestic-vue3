@@ -196,8 +196,13 @@ export const makeContextablePropsMixin = (componentProps: any, prefix = 'c_') =>
       
       // console.log('Object.entries(this.$props)', Object.entries(this.$props), this.$options.props)
       // this.$props[name]
-      // if (!(name in this.$options.propsData) || this.$options.propsData[name] === undefined) {
+      // console.log('this', this)
+      // console.log('this.props', this.props)
+      // console.log('this.$props', this.$props)
+      // console.log('this.$options.propsData', this.$options.propsData)
+      // console.log('this.$options', this.$options)
       
+      // if (!(name in this.$options.propsData) || this.$options.propsData[name] === undefined) {
       if (!hasOwnProperty(this.$props, name) || this.$props[name] === undefined) {
         return getContextPropValue(this, name, (definition as any).default)
       }

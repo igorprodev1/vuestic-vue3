@@ -39,6 +39,7 @@ const ImagePropsMixin = makeContextablePropsMixin({
 
 @Options({
   name: 'VaImage',
+  emits: ['loaded', 'error'],
 })
 export default class VaImage extends Mixins(
   ImagePropsMixin,

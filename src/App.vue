@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <h1>Loading: {{loading}}</h1>
-     <va-slider v-model="value" />
+  <router-view />
+  <!-- <div>
       <va-image
           style="width: 200px; height: 200px;"
           :src="'https://picsum.photos/200/200'"
+          ratio="2"
         >
         <template #loader>
             Loading...
@@ -13,7 +13,7 @@
             Error
           </template>
         </va-image>
-  </div>
+  </div> -->
 </template>
 
 <script  lang="ts">
@@ -47,12 +47,6 @@ import VaImage from './components/vuestic-components/va-image/VaImage.vue'
   },
 })
 export default class App extends Vue {
-  data () {
-    return {
-      loading: false,
-      value: 50,
-    }
-  }
 }
 </script>
 
