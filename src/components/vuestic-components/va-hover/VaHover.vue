@@ -15,12 +15,12 @@ export default class VaHover extends Mixins(StatefulMixin) {
 
   onMouseEnter () {
     this.value = true
-    this.$emit('input', true)
+    this.$emit('update:modelValue', true)
   }
 
   onMouseLeave () {
     this.value = false
-    this.$emit('input', false)
+    this.$emit('update:modelValue', false)
   }
 
   render () {

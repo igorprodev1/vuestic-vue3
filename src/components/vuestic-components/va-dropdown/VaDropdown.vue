@@ -33,7 +33,7 @@ import { Vue, Options } from 'vue-class-component'
 
 @Options({
   name: 'VaDropdown',
-  emits: ['input', 'anchorClick', 'clickOutside'],
+  emits: ['update:modelValue', 'anchorClick', 'clickOutside'],
 })
 export default class VaDropdown extends Vue {
   @Prop({ type: String, default: '' }) debugId!: string
@@ -195,7 +195,7 @@ export default class VaDropdown extends Vue {
       modifiers: [],
       // strategy: this.fixed ? 'fixed' : undefined,
       onFirstUpdate: () => {
-        this.$emit('input', true)
+        this.$emit('update:modelValue', true)
       },
     }
 
@@ -228,7 +228,7 @@ export default class VaDropdown extends Vue {
   }
 
   removePopper (): void {
-    this.$emit('input', false)
+    this.$emit('update:modelValue', false)
 
     if (!this.popperInstance) {
       return

@@ -32,7 +32,7 @@ import { Vue, Options } from 'vue-class-component'
     VaColorPickerInput,
     VaSimplePalettePicker,
   },
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VaPaletteCustom extends Vue {
   @Prop({
@@ -50,7 +50,7 @@ export default class VaPaletteCustom extends Vue {
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 
   get dotIsSelected (): boolean {

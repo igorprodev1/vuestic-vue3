@@ -56,7 +56,7 @@ const RadioPropsMixin = makeContextablePropsMixin({
 
 @Options({
   name: 'VaRadio',
-  emits: ['input', 'focus'],
+  emits: ['update:modelValue', 'focus'],
 })
 export default class VaRadio extends Mixins(
   ColorThemeMixin,
@@ -104,7 +104,7 @@ export default class VaRadio extends Mixins(
 
   onClick (e: Event) {
     if (!this.disabled) {
-      this.$emit('input', this.option, e)
+      this.$emit('update:modelValue', this.option, e)
     }
   }
 
@@ -119,7 +119,7 @@ export default class VaRadio extends Mixins(
   }
 
   clear () {
-    this.$emit('input', null)
+    this.$emit('update:modelValue', null)
   }
 }
 </script>

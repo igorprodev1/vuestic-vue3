@@ -82,7 +82,7 @@ const FileUploadPropsMixin = makeContextablePropsMixin({
     VaButton,
     VaFileUploadList,
   },
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VaFileUpload extends Mixins(
   ColorThemeMixin,
@@ -101,7 +101,7 @@ export default class VaFileUpload extends Mixins(
   }
 
   set files (files) {
-    this.$emit('input', files)
+    this.$emit('update:modelValue', files)
   }
 
   changeFieldValue (e: Event) {

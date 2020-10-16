@@ -14,7 +14,7 @@ import { Vue, Options } from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
 
 @Options({
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VueBookResizeLine extends Vue {
   startValue = 0
@@ -27,13 +27,13 @@ export default class VueBookResizeLine extends Vue {
     if (this.isHorizontal) {
       if (event.screenY) {
         const totalHeight = document.documentElement.clientHeight
-        this.$emit('input', totalHeight - (event.clientY))
+        this.$emit('update:modelValue', totalHeight - (event.clientY))
       }
       return
     }
 
     if (event.screenX) {
-      this.$emit('input', event.clientX)
+      this.$emit('update:modelValue', event.clientX)
     }
   }
 }

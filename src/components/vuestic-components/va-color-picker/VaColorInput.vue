@@ -27,7 +27,7 @@ import { Vue, Options } from 'vue-class-component'
     VaInput,
     ColorDot,
   },
-  emits: ['input', 'click'],
+  emits: ['update:modelValue', 'click'],
 })
 export default class VaColorInput extends Vue {
   @Prop({
@@ -50,7 +50,7 @@ export default class VaColorInput extends Vue {
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 
   onClick (): void {

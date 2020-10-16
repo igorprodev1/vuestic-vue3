@@ -3,7 +3,7 @@ import { FormComponentMixin } from '../FormComponent/FormComponentMixin'
 import { StatefulMixin } from '../StatefulMixin/StatefulMixin'
 import { ColorThemeMixin } from '../../../services/ColorThemePlugin'
 import { KeyboardOnlyFocusMixin } from '../KeyboardOnlyFocusMixin/KeyboardOnlyFocusMixin'
-import { mixins } from 'vue-class-component'
+import { mixins, Options } from 'vue-class-component'
 import { Ref } from 'vue-property-decorator'
 
 const componentProps = {
@@ -19,6 +19,9 @@ const componentProps = {
 const PropsMixin = makeContextablePropsMixin(componentProps)
 
 
+@Options({
+  emits: ['update:modelValue'],
+})
 export class SelectableMixin extends mixins(
   PropsMixin,
   ColorThemeMixin,
@@ -33,7 +36,7 @@ export class SelectableMixin extends mixins(
 
   get isChecked (): boolean {
     if (this.modelIsArray) {
-      return this.c_value && this.c_value.includes(this.c_arrayValue)
+      return this.c_modelValue && this.c_modelValue.includes(this.c_arrayValue)
     }
     return this.valueComputed === this.c_trueValue
   }
@@ -53,7 +56,7 @@ export class SelectableMixin extends mixins(
 
   /** @public */
   reset (): void {
-    this.$emit('input', false)
+    this.$emit('update:modelValue', false)
   }
 
   checkDuplicates (): void {
@@ -87,6 +90,7 @@ export class SelectableMixin extends mixins(
   }
 
   onWrapperClick (): void {
+    
     if (this.isElementRelated(document.activeElement)) {
       (this.$refs.input as any).focus()
       this.isKeyboardFocused = false
@@ -98,14 +102,14 @@ export class SelectableMixin extends mixins(
     if (this.c_readonly || this.c_disabled || this.c_loading) {
       return
     }
-    // For array access we pretend computedValue does not exist and use c_value + emit input directly.
+    // For array access we pretend computedValue does not exist and use c_modelValue + emit input directly.
     if (this.modelIsArray) {
-      if (!this.c_value) {
-        this.$emit('input', [this.c_arrayValue])
-      } else if (this.c_value.includes(this.c_arrayValue)) {
-        this.$emit('input', this.c_value.filter((option: any) => option !== this.c_arrayValue))
+      if (!this.c_modelValue) {
+        this.$emit('update:modelValue', [this.c_arrayValue])
+      } else if (this.c_modelValue.includes(this.c_arrayValue)) {
+        this.$emit('update:modelValue', this.c_modelValue.filter((option: any) => option !== this.c_arrayValue))
       } else {
-        this.$emit('input', this.c_value.concat(this.c_arrayValue))
+        this.$emit('update:modelValue', this.c_modelValue.concat(this.c_arrayValue))
       }
       return
     }

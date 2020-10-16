@@ -62,7 +62,7 @@ import { Vue, Options } from 'vue-class-component'
     VaSliderColorPicker,
     VaColorInput,
   },
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VaColorPickerInput extends Vue {
   @Prop({
@@ -90,7 +90,7 @@ export default class VaColorPickerInput extends Vue {
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 
   get isInputDisabled () {

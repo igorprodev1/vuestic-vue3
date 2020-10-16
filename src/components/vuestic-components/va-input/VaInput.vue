@@ -136,6 +136,7 @@ const InputPropsMixin = makeContextablePropsMixin({
 @Options({
   name: 'VaInput',
   components: { VaInputWrapper, VaIcon },
+  emits: ['update:modelValue', 'change', 'click:prepend', 'click:prepend-inner', 'click:append', 'click:append-inner', 'focus', 'blur', 'keyup', 'keydown'],
 })
 export default class VaInput extends Mixins(
   ColorThemeMixin,

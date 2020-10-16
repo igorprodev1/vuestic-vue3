@@ -51,6 +51,7 @@ import { Vue, Options, mixins } from 'vue-class-component'
 import { reactive } from 'vue'
 
 @Options({
+  name: 'VbCard',
   components: { FontAwesomeIcon },
 })
 export default class VbCard extends mixins(ContainerFocusInjectMixin) {
@@ -69,7 +70,8 @@ export default class VbCard extends mixins(ContainerFocusInjectMixin) {
   cardStyleTemp: {} | { width: string | null, height: string | null } = {}
 
   get stateComputed () {
-    return reactive(this.state)
+    // return reactive(this.state)
+    return this.state
   }
 
   get computedStyle () {

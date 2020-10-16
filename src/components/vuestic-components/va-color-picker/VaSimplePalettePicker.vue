@@ -22,7 +22,7 @@ import ColorDot from './ColorDot.vue'
   components: {
     ColorDot,
   },
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VaSimplePalettePicker extends Vue {
   @Prop({
@@ -40,7 +40,7 @@ export default class VaSimplePalettePicker extends Vue {
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 
   isSelected (color: any): boolean {

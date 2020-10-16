@@ -14,7 +14,7 @@ import { Vue, Options } from 'vue-class-component'
 @Options({
   name: 'VaAdvancedColorPicker',
   components: { ChromePicker: Chrome },
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VaAdvancedColorPicker extends Vue {
   @Prop({
@@ -27,7 +27,7 @@ export default class VaAdvancedColorPicker extends Vue {
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value.hex)
+    this.$emit('update:modelValue', value.hex)
   }
 }
 </script>

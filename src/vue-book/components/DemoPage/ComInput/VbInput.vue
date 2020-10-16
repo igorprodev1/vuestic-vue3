@@ -21,7 +21,7 @@ import { Prop } from 'vue-property-decorator'
 
 @Options({
   name: 'VbInput',
-  emits: ['input', 'focus', 'blur', 'up', 'down', 'enter'],
+  emits: ['update:modelValue', 'focus', 'blur', 'up', 'down', 'enter'],
 })
 export default class VbInput extends Vue {
   // TODO Check if that default: 'default' is truly needed
@@ -51,7 +51,7 @@ export default class VbInput extends Vue {
         this.temporaryValue = this.value
       }
     })
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 }
 </script>

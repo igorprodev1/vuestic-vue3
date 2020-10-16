@@ -83,12 +83,12 @@ import { makeContextablePropsMixin } from '../../context-test/context-provide/Co
 import { Options } from 'vue-class-component'
 
 const SwitchPropsMixin = makeContextablePropsMixin({
-  value: { type: [Boolean, Array, String, Object], default: false },
+  modelValue: { type: [Boolean, Array, String, Object], default: false },
   size: {
     type: String,
     default: 'medium',
-    validator: (value: string) => {
-      return ['medium', 'small', 'large'].includes(value)
+    validator: (modelmodelValue: string) => {
+      return ['medium', 'small', 'large'].includes(modelmodelValue)
     },
   },
   trueLabel: { type: String, default: null },
@@ -100,12 +100,14 @@ const SwitchPropsMixin = makeContextablePropsMixin({
 @Options({
   name: 'VaSwitch',
   components: { VaProgressCircle, VaInputWrapper },
+  emits: ['focus', 'blur', 'update:modelmodelValue'],
 })
 export default class VaSwitch extends Mixins(
   SelectableMixin,
   LoadingMixin,
   SwitchPropsMixin,
 ) {
+
   get computedInnerLabel () {
     if (this.c_trueInnerLabel && this.isChecked) {
       return this.c_trueInnerLabel

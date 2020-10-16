@@ -1,7 +1,6 @@
 import Cleave from 'cleave.js'
 import { makeContextablePropsMixin } from '../../../context-test/context-provide/ContextPlugin'
 import { Mixins, Watch } from 'vue-property-decorator'
-import Component from 'vue-class-component'
 import { CleaveOptions } from 'cleave.js/options'
 
 const DEFAULT_MASK_TOKENS: Record<string, object> = {
@@ -33,6 +32,7 @@ const PropsMixin = makeContextablePropsMixin({
     default: true,
   },
 })
+
 
 export class InputMixin extends Mixins(PropsMixin) {
   inputElement: Cleave | null = null
@@ -70,17 +70,17 @@ export class InputMixin extends Mixins(PropsMixin) {
 
   onInput (event: any): void {
     if (typeof this.mask !== 'string' && !Object.keys(this.mask).length) {
-      this.$emit('input', event.target.value)
+      this.$emit('update:modelValue', event.target.value)
       return
     }
     if (this.inputElement) {
       this.inputElement.setRawValue(event.target.value)
       if (this.returnRaw) {
-        this.$emit('input', this.inputElement.getRawValue())
+        this.$emit('update:modelValue', this.inputElement.getRawValue())
         return
       }
     }
-    this.$emit('input', event.target.value)
+    this.$emit('update:modelValue', event.target.value)
   }
 
   onChange (event: any): void {
@@ -188,6 +188,6 @@ export class InputMixin extends Mixins(PropsMixin) {
 
   /** @public */
   reset (): void {
-    this.$emit('input', '')
+    this.$emit('update:modelValue', '')
   }
 }

@@ -16,7 +16,7 @@ import { Vue, Options } from 'vue-class-component'
   components: {
     SliderPicker: Slider,
   },
-  emits: ['input'],
+  emits: ['update:modelValue'],
 })
 export default class VaColorPickerInput extends Vue {
   @Prop({
@@ -29,7 +29,7 @@ export default class VaColorPickerInput extends Vue {
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value.hex)
+    this.$emit('update:modelValue', value.hex)
   }
 }
 </script>

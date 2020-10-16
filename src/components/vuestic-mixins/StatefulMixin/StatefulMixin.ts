@@ -1,4 +1,4 @@
-import { mixins } from 'vue-class-component';
+import { mixins, Options } from 'vue-class-component';
 
 import { makeContextablePropsMixin } from '../../context-test/context-provide/ContextPlugin'
 
@@ -17,9 +17,13 @@ const PropsMixin = makeContextablePropsMixin(componentProps)
 
 // TODO Definitions could be done better, but it's too complicated to bother.
 
+@Options({
+  emits: ['update:modelValue']
+})
 export class StatefulMixin extends mixins(PropsMixin) {
+  // emits = ['update:modelValue']
   valueState = {
-    value: undefined,
+    modelValue: undefined,
   }
 
   created () {
@@ -27,9 +31,9 @@ export class StatefulMixin extends mixins(PropsMixin) {
   }
   
   // watch: {
-  //   value = () => {
+  //   modelValue = () => {
   //     if (this.stateful) {
-  //       this.valueState.value = this.value
+  //       this.valueState.modelValue = this.modelValue
   //     }
   //   }
   // }
@@ -37,15 +41,15 @@ export class StatefulMixin extends mixins(PropsMixin) {
 
   get valueComputed () {
     if (this.stateful) {
-      return this.valueState.value
+      return this.valueState.modelValue
     }
-    return this.value
+    return this.modelValue
   }
 
   set valueComputed (value) {
     if (this.stateful) {
-      this.valueState.value = value
+      this.valueState.modelValue = value
     }
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 }

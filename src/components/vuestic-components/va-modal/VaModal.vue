@@ -124,7 +124,7 @@ const ModalPropsMixin = makeContextablePropsMixin({
 @Options({
   name: 'VaModal',
   components: { VaButton, VaIcon },
-  emits: ['input', 'cancel', 'ok','beforeOpen','open', 'beforeClose', 'close', 'clickOutside'],
+  emits: ['update:modelValue', 'cancel', 'ok','beforeOpen','open', 'beforeClose', 'close', 'clickOutside'],
 })
 export default class VaModal extends Mixins(
   StatefulMixin,
@@ -209,7 +209,7 @@ export default class VaModal extends Mixins(
     if (this.c_stateful) {
       this.valueComputed = value
     } else {
-      this.$emit('input', value)
+      this.$emit('update:modelValue', value)
     }
   }
 

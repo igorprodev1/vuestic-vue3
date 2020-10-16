@@ -210,7 +210,7 @@ const SliderPropsMixin = makeContextablePropsMixin({
 @Options({
   name: 'VaSlider',
   components: { VaIcon },
-  emits: ['dragStart', 'dragEnd', 'change', 'input'],
+  emits: ['dragStart', 'dragEnd', 'change', 'update:modelValue'],
 })
 export default class VaSlider extends Mixins(
   ColorThemeMixin,
@@ -347,7 +347,7 @@ export default class VaSlider extends Mixins(
     if (!this.flag) {
       this.$emit('change', val)
     }
-    this.$emit('input', val)
+    this.$emit('update:modelValue', val)
   }
 
   get total () {

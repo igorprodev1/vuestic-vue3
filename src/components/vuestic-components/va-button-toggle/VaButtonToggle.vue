@@ -85,7 +85,7 @@ export default class VaButtonToggle extends Mixins(
   }
 
   changeValue (value: any) {
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 }
 </script>

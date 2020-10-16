@@ -26,6 +26,7 @@ const router = createRouter({
   routes,
 })
 
+app.use(ColorThemePlugin)
 app.use(VueBookComponents)
 app.use(router)
 // app.use(ColorThemePlugin)

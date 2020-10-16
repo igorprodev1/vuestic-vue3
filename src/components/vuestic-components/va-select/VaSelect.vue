@@ -226,7 +226,7 @@ const PropsMixin = makeContextablePropsMixin({
     VaInput,
     VaInputWrapper,
   },
-  emits:['updateSearch', 'input', 'clear'],
+  emits:['updateSearch', 'update:modelValue', 'clear'],
 })
 export default class VaSelect extends Mixins(
   ContextPluginMixin,
@@ -264,7 +264,7 @@ export default class VaSelect extends Mixins(
   }
 
   set valueProxy (value: any) {
-    this.$emit('input', value)
+    this.$emit('update:modelValue', value)
   }
 
   get isArrayValue () {
