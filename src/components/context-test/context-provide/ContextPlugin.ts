@@ -83,9 +83,9 @@ export const getContextPropValue = (
   // and methods are not accessible there.
 
   // Local prop takes priority even when empty.
-  if (hasOwnProperty(context, prop)) {
-    return context[prop]
-  }
+  // if (hasOwnProperty(context, prop)) {
+  //   return context[prop]
+  // }
 
   const componentName = pascalCase(context.$options.name)
 
@@ -194,20 +194,22 @@ export const makeContextablePropsMixin = (componentProps: any, prefix = 'c_') =>
       // * prop value is undefined (allows user to dynamically enter/exit context).
       // * prop value is not defined
       
-      // console.log('Object.entries(this.$props)', Object.entries(this.$props), this.$options.props)
-      // this.$props[name]
-      // console.log('this', this)
-      // console.log('this.props', this.props)
-      // console.log('this.$props', this.$props)
-      // console.log('this.$options.propsData', this.$options.propsData)
-      // console.log('this.$options', this.$options)
-      
-      // if (!(name in this.$options.propsData) || this.$options.propsData[name] === undefined) {
-      if (!hasOwnProperty(this.$props, name) || this.$props[name] === undefined) {
+      if (typeof (definition as any).default === "function") {
+        if ((definition as any).default() === this.$props[name]) {
+          return getContextPropValue(this, name, (definition as any).default)
+        }
+      } else if ((definition as any).default === this.$props[name]) {
         return getContextPropValue(this, name, (definition as any).default)
+      } else {
+        return this[name]
       }
-      // In other cases we return the prop itself.
-      return this[name]
+
+      // if (!(name in this.$options.propsData) || this.$options.propsData[name] === undefined) {
+      // if (!hasOwnProperty(this.$props, name) || this.$props[name] === undefined) {
+      //   return getContextPropValue(this, name, (definition as any).default)
+      // }
+      // // In other cases we return the prop itself.
+      // return this[name]
     }
   })
 

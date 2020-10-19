@@ -6,7 +6,7 @@ export const getContext = () => {
   return {
     VaIcon: {
       iconsConfig: {
-        defaultFont: 'fas',
+        defaultFont: 'md',
         icons: {
           ...iconsDemoConfig,
           ...iconsDocsConfig,

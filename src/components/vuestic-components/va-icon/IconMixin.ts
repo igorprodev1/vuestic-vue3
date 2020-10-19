@@ -65,7 +65,7 @@ const getComponent = (iconConfig: any) => {
 
 const IconMixinContextableProps = makeContextablePropsMixin({
   name: { type: String, default: '' },
-  iconsConfig: { type: Object, default: () => ({}) },
+  iconsConfig: { type: Object, default: {} },
 })
 
 
@@ -81,7 +81,7 @@ export class IconMixin extends Mixins(
     if (!this.c_name) {
       return null
     }
-
+    console.log('get icon')
     if (this.c_iconsConfig.icons && !(this.c_name in this.c_iconsConfig.icons)) {
       throw new Error(`Icon config for icon '${this.c_name}' not found`)
     }
