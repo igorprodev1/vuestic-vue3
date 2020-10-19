@@ -101,7 +101,7 @@ export default {
   computed: {
     valueProxy: {
       get () {
-        return this.c_value
+        return this.c_modelValue
       },
       set (value) {
         if (!this.c_disabled) {

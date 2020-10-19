@@ -14,6 +14,6 @@ export class ProgressComponentMixin extends Mixins(
   ProgressMixinContextableProps,
 ) {
   get normalizedValue (): number {
-    return normalizeValue(this.c_value)
+    return normalizeValue(this.c_modelValue)
   }
 }

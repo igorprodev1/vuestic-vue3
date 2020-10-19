@@ -63,7 +63,7 @@
           :placeholder="c_placeholder"
           :disabled="c_disabled"
           :readonly="c_readonly"
-          :value="c_value"
+          :value="c_modelValue"
           v-on="eventListeners"
           v-bind="$attrs"
           ref="textarea"

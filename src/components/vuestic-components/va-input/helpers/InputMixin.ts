@@ -65,7 +65,7 @@ export class InputMixin extends Mixins(PropsMixin) {
   }
 
   get hasContent (): boolean {
-    return ![null, undefined, ''].includes(this.c_value)
+    return ![null, undefined, ''].includes(this.c_modelValue)
   }
 
   onInput (event: any): void {
