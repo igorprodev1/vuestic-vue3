@@ -3,8 +3,7 @@
 </template>
 
 <script lang="ts">
-import { Options,Vue } from 'vue-class-component';
-import { Component } from 'vue-property-decorator'
+import { Options, Vue } from 'vue-class-component'
 
 @Options({
   name: 'VaSeparator',

@@ -19,7 +19,7 @@ import { Prop } from 'vue-property-decorator'
 export default class VueBookResizeLine extends Vue {
   startValue = 0
   startCoordinate = 0
-  @Prop({ type: Number, required: true }) value!: number
+  @Prop({ type: Number, required: true }) modelValue!: number
   @Prop({ type: Boolean, default: false }) isHorizontal!: boolean
 
   onDrag (event: DragEvent): void {

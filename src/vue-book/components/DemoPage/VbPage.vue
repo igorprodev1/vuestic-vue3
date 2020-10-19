@@ -208,7 +208,6 @@ export default class VbPage extends mixins( ContainerFocusProvideMixin ) {
   })
 
   beforeCreate () {
-    console.log('beforeCreate')
     this.foldersStoreInstance.load()
     this.configStore.load()
     const treeFolder = this.treeFolder

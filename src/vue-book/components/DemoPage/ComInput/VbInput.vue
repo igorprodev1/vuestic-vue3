@@ -27,7 +27,7 @@ export default class VbInput extends Vue {
   // TODO Check if that default: 'default' is truly needed
   @Prop({ type: String, default: 'default' }) type!: string
   @Prop({ type: String, default: 'default' }) name!: string
-  @Prop({ type: String, default: '' }) value!: string
+  @Prop({ type: String, default: '' }) modelValue!: string
   @Prop({ type: String, default: '' }) placeholder!: string
   @Prop({ type: String, default: '' }) tooltip!: string
 
@@ -38,8 +38,8 @@ export default class VbInput extends Vue {
   }
 
   get valueProxy () {
-    if (this.value && this.value !== this.temporaryValue) {
-      this.temporaryValue = this.value
+    if (this.modelValue && this.modelValue !== this.temporaryValue) {
+      this.temporaryValue = this.modelValue
     }
     return this.temporaryValue
   }
@@ -47,8 +47,8 @@ export default class VbInput extends Vue {
   set valueProxy (value: string) {
     this.temporaryValue = value
     nextTick(() => {
-      if (this.value && this.value !== this.temporaryValue) {
-        this.temporaryValue = this.value
+      if (this.modelValue && this.modelValue !== this.temporaryValue) {
+        this.temporaryValue = this.modelValue
       }
     })
     this.$emit('update:modelValue', value)

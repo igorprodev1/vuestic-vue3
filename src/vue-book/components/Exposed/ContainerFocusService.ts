@@ -3,7 +3,6 @@ import { ArrayHelpers } from 'asva-helpers'
 import { Inject, Prop } from 'vue-property-decorator'
 
 const createContainerFocusService = () => {
-  console.log('Call createContainerFocusService')
   class Container extends Vue {
       focusedContainers: string[] = []
 
@@ -26,7 +25,6 @@ const createContainerFocusService = () => {
 
 export class ContainerFocusProvideMixin extends Vue {
   provide () {
-    console.log('ContainerFocusProvideMixin')
     return {
       vbFocusService: createContainerFocusService(),
     }

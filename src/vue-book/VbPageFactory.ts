@@ -24,7 +24,6 @@ export const createVueBookComponent = (config: Partial<VueBookConfig>) => {
       })
     }),
   })
-  console.log('treeFileCollection', treeFileCollection)
   class VbPageWrapper extends Vue {
     render () {
       return h(

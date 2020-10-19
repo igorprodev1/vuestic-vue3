@@ -47,12 +47,14 @@ export default class VaBreadcrumbs extends Mixins(
     const childNodesLength = childNodes.length
     const isLastIndexChildNodes = (index: number) => index === childNodesLength - 1
 
-    const separatorNode = this.$slots.separator || [this.separator]
-
+    const separatorNode = (this.$slots.separator ? this.$slots.separator() : 0) || [this.separator]
+    console.log('separatorNode', separatorNode)
     const createSeparatorComponent = () => h(
       'span',
       {
-        class: ['va-breadcrumbs__separator', this.computedClass],
+        class: ['va-breadcrumbs__separator',
+        // this.computedClass
+        ],
         style: [{ color: this.computedThemesSeparatorColor }],
       },
       separatorNode,

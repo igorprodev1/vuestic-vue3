@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { Options } from 'vue-class-component'
-import { Component, Mixins } from 'vue-property-decorator'
+import { Mixins } from 'vue-property-decorator'
 
 import { getGradientBackground } from '../../../services/color-functions'
 import { ColorThemeMixin, getColor } from '../../../services/ColorThemePlugin'
@@ -46,6 +46,7 @@ const CardPropsMixin = makeContextablePropsMixin({
 
 @Options({
   name: 'VaCard',
+  emits: ['click'],
 })
 export default class VaCard extends Mixins(
   ColorThemeMixin,
