@@ -84,7 +84,7 @@
       <va-dropdown
         trigger="none"
         :is-content-hoverable="false"
-        :value="noTriggerValue"
+        :modelValue="noTriggerValue"
       >
         <button slot="anchor">
           None
@@ -111,7 +111,7 @@
         <va-dropdown
           trigger="none"
           :is-content-hoverable="false"
-          :value="eventsValue"
+          :modelValue="eventsValue"
           @clickOutside="$vb.log('Events: clickOutside')"
           @anchorClick="$vb.log('Events: anchorClick')"
         >
