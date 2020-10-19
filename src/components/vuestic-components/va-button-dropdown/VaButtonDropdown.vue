@@ -4,22 +4,24 @@
       v-if="!c_split"
       :disabled="c_disabled"
       :position="c_position"
-      @input="toggleDropdown"
+      @update:modelValue="toggleDropdown"
     >
-      <va-button
-        slot="anchor"
-        :size="c_size"
-        :flat="c_flat"
-        :outline="c_outline"
-        :disabled="c_disabled"
-        :color="c_color"
-        :icon-right="computedIcon"
-        @click="click"
-      >
-        <slot name="label">
-          {{ c_label }}
-        </slot>
-      </va-button>
+      <template #anchor>
+        <va-button
+          :size="c_size"
+          :flat="c_flat"
+          :outline="c_outline"
+          :disabled="c_disabled"
+          :color="c_color"
+          :icon-right="computedIcon"
+          @click="click"
+        >
+          <slot name="label">
+            {{ c_label }}
+          </slot>
+        </va-button>
+      </template>
+
       <div class="va-button-dropdown__content">
         <slot />
       </div>
@@ -41,8 +43,9 @@
       <va-dropdown
         :disabled="c_disabled || c_disableDropdown"
         :position="c_position"
-        @input="toggleDropdown"
+        @update:modelValue="toggleDropdown"
       >
+      <template #anchor>
         <va-button
           :size="c_size"
           :flat="c_flat"
@@ -50,9 +53,9 @@
           :disabled="c_disabled || c_disableDropdown"
           :color="c_color"
           :icon="computedIcon"
-          slot="anchor"
           @click="click"
         />
+      </template>
         <div class="va-button-dropdown__content">
           <slot />
         </div>
@@ -112,7 +115,7 @@ export default class VaButtonDropdown extends Mixins(
   showDropdown = false
 
   get computedIcon (): string {
-    const propsData: any = this.$options.propsData
+    const propsData: any = this.$props
     const resultedIcon = propsData.openedIcon || (propsData.icon ? this.c_icon : this.c_openedIcon)
     return this.showDropdown ? resultedIcon : this.c_icon
   }

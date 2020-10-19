@@ -41,7 +41,7 @@ export default class VaDropdown extends Vue {
   @Prop({ type: Number, default: 30 }) hoverOverTimeout!: number
   @Prop({ type: Number, default: 200 }) hoverOutTimeout!: number
   @Prop({ type: Boolean }) boundaryBody!: boolean
-  @Prop({ type: Boolean }) value!: boolean
+  @Prop({ type: Boolean }) modelValue!: boolean
   @Prop({ type: Boolean }) disabled!: boolean
   // Makes no sense
   // @Prop({ type: Boolean }) fixed!: boolean
@@ -86,7 +86,7 @@ export default class VaDropdown extends Vue {
       return this.isClicked
     }
     if (this.trigger === 'none') {
-      return this.value
+      return this.modelValue
     }
 
     return false
