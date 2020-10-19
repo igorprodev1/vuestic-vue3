@@ -225,8 +225,9 @@ export default class VaButton extends Mixins(
   }
 
   get inputListeners () {
+    // vue3 $listeners.click -> $attrs.onClick
     return Object.assign({},
-      this.$listeners,
+      this.$attrs,
       {
         click: (event: Event) => {
           this.$emit('click', event)
