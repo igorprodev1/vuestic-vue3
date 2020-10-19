@@ -48,7 +48,7 @@ export default class VaBreadcrumbs extends Mixins(
     const isLastIndexChildNodes = (index: number) => index === childNodesLength - 1
 
     const separatorNode = (this.$slots.separator ? this.$slots.separator() : 0) || [this.separator]
-    console.log('separatorNode', separatorNode)
+
     const createSeparatorComponent = () => h(
       'span',
       {
