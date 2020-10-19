@@ -33,7 +33,7 @@ export default class VaColorInput extends Vue {
   @Prop({
     type: String,
     default: '',
-  }) readonly value!: string
+  }) readonly modelValue!: string
 
   @Prop({
     type: Boolean,
@@ -46,7 +46,7 @@ export default class VaColorInput extends Vue {
   }) readonly disabled!: boolean
 
   get valueProxy (): any {
-    return this.value
+    return this.modelValue
   }
 
   set valueProxy (value: any) {

@@ -38,7 +38,7 @@ export default class VaPaletteCustom extends Vue {
   @Prop({
     type: String,
     default: '',
-  }) readonly value!: string
+  }) readonly modelValue!: string
 
   @Prop({
     type: Array,
@@ -46,7 +46,7 @@ export default class VaPaletteCustom extends Vue {
   }) readonly palette!: Array<string>
 
   get valueProxy (): any {
-    return this.value
+    return this.modelValue
   }
 
   set valueProxy (value: any) {
@@ -54,7 +54,7 @@ export default class VaPaletteCustom extends Vue {
   }
 
   get dotIsSelected (): boolean {
-    return this.palette.includes(this.value)
+    return this.palette.includes(this.modelValue)
   }
 }
 </script>

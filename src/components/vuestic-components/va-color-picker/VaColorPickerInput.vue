@@ -68,7 +68,7 @@ export default class VaColorPickerInput extends Vue {
   @Prop({
     type: String,
     default: '',
-  }) readonly value!: string
+  }) readonly modelValue!: string
 
   @Prop({
     type: String,
@@ -86,7 +86,7 @@ export default class VaColorPickerInput extends Vue {
   }) readonly selected!: boolean
 
   get valueProxy (): any {
-    return this.value
+    return this.modelValue
   }
 
   set valueProxy (value: any) {

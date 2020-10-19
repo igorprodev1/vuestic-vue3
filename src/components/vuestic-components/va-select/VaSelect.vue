@@ -17,7 +17,7 @@
       boundaryBody
       :closeOnAnchorClick="c_multiple"
       keepAnchorWidth
-      @input="onDropdownInput"
+      @update:modelValue="onDropdownInput"
       ref="dropdown"
     >
       <va-input
@@ -96,7 +96,7 @@
                     size="small"
                     color="primary"
                     :closeable="deletableTags"
-                    @input="selectOption(option)"
+                    @update:modelValue="selectOption(option)"
                   >
                     {{option}}
                   </va-tag>

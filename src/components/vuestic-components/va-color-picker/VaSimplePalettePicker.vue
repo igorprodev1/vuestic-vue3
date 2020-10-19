@@ -28,7 +28,7 @@ export default class VaSimplePalettePicker extends Vue {
   @Prop({
     type: String,
     default: '',
-  }) readonly value!: string
+  }) readonly modelValue!: string
 
   @Prop({
     type: Array,
@@ -36,7 +36,7 @@ export default class VaSimplePalettePicker extends Vue {
   }) readonly palette!: Array<string>
 
   get valueProxy (): any {
-    return this.value
+    return this.modelValue
   }
 
   set valueProxy (value: any) {
@@ -44,7 +44,7 @@ export default class VaSimplePalettePicker extends Vue {
   }
 
   isSelected (color: any): boolean {
-    return this.value === color
+    return this.modelValue === color
   }
 
   handlerClick (color: any): void {

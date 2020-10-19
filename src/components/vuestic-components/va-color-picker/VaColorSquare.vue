@@ -17,7 +17,7 @@ export default class VaColorSquare extends Vue {
     type: String,
     default: '',
     required: true,
-  }) readonly value!: string
+  }) readonly modelValue!:string
 }
 </script>
 

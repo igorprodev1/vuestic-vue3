@@ -110,7 +110,7 @@ export default class VaAlert extends Mixins(
   @Prop({
     type: Boolean,
     default: true,
-  }) readonly value!: boolean
+  }) readonly modelValue!: boolean
 
   mounted () {
     console.log('VaAlert has mounted')
