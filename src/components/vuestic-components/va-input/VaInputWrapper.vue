@@ -14,7 +14,7 @@
           <div class="va-input-wrapper__details py-0 px-2">
             <va-message-list
               :color="messagesColor"
-              :value="messagesComputed"
+              :modelValue="messagesComputed"
               :limit="errorLimit"
             />
           </div>
@@ -57,6 +57,7 @@ export default class VaInputWrapper extends Mixins(
   InputWrapperPropsMixin,
 ) {
   get messagesComputed () {
+    console.log('get messagesComputed', this.c_error, this.c_errorMessages, this.messages)
     return this.c_error ? this.c_errorMessages : this.messages
   }
 

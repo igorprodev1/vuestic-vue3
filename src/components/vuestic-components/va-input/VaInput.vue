@@ -12,7 +12,6 @@
   >
     <slot
       name="prepend"
-      slot="prepend"
     />
     <div
       class="va-input__container"
@@ -104,7 +103,6 @@
     </div>
     <slot
       name="append"
-      slot="append"
     />
   </va-input-wrapper>
 </template>
@@ -136,7 +134,8 @@ const InputPropsMixin = makeContextablePropsMixin({
 @Options({
   name: 'VaInput',
   components: { VaInputWrapper, VaIcon },
-  emits: ['update:modelValue', 'change', 'click:prepend', 'click:prepend-inner', 'click:append', 'click:append-inner', 'focus', 'blur', 'keyup', 'keydown'],
+  emits: ['update:modelValue', 'change', 'click:prepend', 'click:prepend-inner',
+    'click:append', 'click:append-inner', 'focus', 'blur', 'keyup', 'keydown', 'click'],
 })
 export default class VaInput extends Mixins(
   ColorThemeMixin,

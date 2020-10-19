@@ -43,17 +43,17 @@ export class InputMixin extends Mixins(PropsMixin) {
   onOptionsChange (mask: CleaveOptions | string) {
     this.destroyCleaveInstance()
     this.inputElement = new Cleave(this.$refs.input as HTMLInputElement, this.getMask(mask))
-    this.inputElement.setRawValue(this.value)
+    this.inputElement.setRawValue(this.modelValue)
   }
 
   get computedValue (): string {
     if (!this.inputElement) {
-      return this.value
+      return this.modelValue
     }
-    if (this.returnRaw && this.value === this.inputElement.getRawValue()) {
+    if (this.returnRaw && this.modelValue === this.inputElement.getRawValue()) {
       return this.inputElement.getFormattedValue()
     }
-    return this.value
+    return this.modelValue
   }
 
   get showIcon (): boolean {

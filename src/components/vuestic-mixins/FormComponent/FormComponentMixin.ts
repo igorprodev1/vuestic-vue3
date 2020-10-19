@@ -38,7 +38,7 @@ const PropsMixin = makeContextablePropsMixin(componentProps)
     },
     modelValue: {
       validator: () => {
-        throw new Error('ValidateMixin: `value` prop should be defined in component.')
+        throw new Error('ValidateMixin: `modelValue` prop should be defined in component.')
       },
     }
   }
@@ -80,7 +80,7 @@ export class FormComponentMixin extends mixins(
     this.computedErrorMessages = []
 
     if (this.rules && this.rules.length > 0) {
-      prepareValidations(flatten(this.rules), this.value)
+      prepareValidations(flatten(this.rules), this.modelValue)
         .forEach((validateResult: any) => {
           if (isString(validateResult)) {
             this.computedErrorMessages.push(validateResult)
