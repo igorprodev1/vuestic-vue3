@@ -6,7 +6,6 @@
     :style="computedStyle"
     aria-hidden="true"
     notranslate
-    v-on="$listeners"
   >
     <slot>{{ computedContent }}</slot>
   </component>
@@ -60,7 +59,7 @@ export default class VaIcon extends mixins(
   }
 
   get hasClickListener () {
-    return this.$listeners && this.$listeners.click
+    return this.$attrs && this.$attrs.onClick
   }
 
   get cursorStyle () {
