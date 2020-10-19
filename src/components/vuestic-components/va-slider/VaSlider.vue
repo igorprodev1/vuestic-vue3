@@ -224,9 +224,10 @@ export default class VaSlider extends Mixins(
   isFocused = false
   flag = false
   size = 0
-  currentValue = this.value
+  currentValue = this.modelValue
   currentSlider = 0
   isComponentExists = false
+  hasMouseDown = false
 
   get pinPositionStyle (): 'bottom' | 'left' {
     return this.vertical ? 'bottom' : 'left'
@@ -283,7 +284,7 @@ export default class VaSlider extends Mixins(
   }
 
   get processedStyles () {
-    const validatedValue = this.limitValue(this.value)
+    const validatedValue = this.limitValue(this.modelValue)
 
     if (this.range) {
       const val0 = ((validatedValue[0] - this.min) / (this.max - this.min)) * 100
@@ -307,7 +308,7 @@ export default class VaSlider extends Mixins(
   }
 
   get dottedStyles () {
-    const validatedValue = this.limitValue(this.value)
+    const validatedValue = this.limitValue(this.modelValue)
 
     if (this.range) {
       const val0 = ((validatedValue[0] - this.min) / (this.max - this.min)) * 100
@@ -337,7 +338,7 @@ export default class VaSlider extends Mixins(
   }
 
   get val () {
-    return this.value
+    return this.modelValue
   }
 
   set val (val) {
@@ -364,7 +365,7 @@ export default class VaSlider extends Mixins(
   }
 
   get interval () {
-    return this.value[1] - this.value[0]
+    return this.modelValue[1] - this.modelValue[0]
   }
 
   get pinsCol () {
@@ -372,7 +373,7 @@ export default class VaSlider extends Mixins(
   }
 
   get position (): any {
-    return this.isRange ? [(this.value[0] - this.min) / this.step * this.gap, (this.value[1] - this.min) / this.step * this.gap] : ((this.value - this.min) / this.step * this.gap)
+    return this.isRange ? [(this.modelValue[0] - this.min) / this.step * this.gap, (this.modelValue[1] - this.min) / this.step * this.gap] : ((this.modelValue - this.min) / this.step * this.gap)
   }
 
   get limit () {
@@ -384,7 +385,7 @@ export default class VaSlider extends Mixins(
   }
 
   get isRange () {
-    return Array.isArray(this.value)
+    return Array.isArray(this.modelValue)
   }
 
   get propsForValidation () {
@@ -482,7 +483,7 @@ export default class VaSlider extends Mixins(
     if (!this.disabled && !this.readonly) {
       if (this.flag) {
         this.$emit('dragEnd')
-        this.$emit('change', this.range ? Array.from(this.value) : this.value)
+        this.$emit('change', this.range ? Array.from(this.modelValue) : this.modelValue)
       } else {
         return false
       }
@@ -663,10 +664,10 @@ export default class VaSlider extends Mixins(
       if (this.isDiff(this.currentValue[slider], val)) {
         this.currentValue.splice(slider, 1, val)
         if (slider === 0) {
-          this.val = [this.currentValue.splice(slider, 1, val)[0], this.value[1]]
+          this.val = [this.currentValue.splice(slider, 1, val)[0], this.modelValue[1]]
           this.currentValue = [...this.val]
         } else {
-          this.val = [this.value[0], this.currentValue.splice(slider, 1, val)[0]]
+          this.val = [this.modelValue[0], this.currentValue.splice(slider, 1, val)[0]]
           this.currentValue = [...this.val]
         }
       }
@@ -717,7 +718,7 @@ export default class VaSlider extends Mixins(
     if (this.isRange) {
       const slider = this.currentSlider
       const difference = 100 / (this.max - this.min)
-      const val0 = (this.value[0] - this.min) * difference
+      const val0 = (this.modelValue[0] - this.min) * difference
       const processPosition = `${val0}%`
 
       if (slider === 0) {
@@ -728,7 +729,7 @@ export default class VaSlider extends Mixins(
         this.dot1.focus()
       }
     } else {
-      const val = ((this.value - this.min) / (this.max - this.min)) * 100
+      const val = ((this.modelValue - this.min) / (this.max - this.min)) * 100
 
       this.dot.style[this.pinPositionStyle] = `calc(${val} - 8px)`
       this.dot.focus()
@@ -789,7 +790,7 @@ export default class VaSlider extends Mixins(
 
   mounted () {
     this.$nextTick(() => {
-      if (validateSlider(this.value, this.step, this.min, this.max)) {
+      if (validateSlider(this.modelValue, this.step, this.min, this.max)) {
         this.getStaticData()
         this.bindEvents()
       }
