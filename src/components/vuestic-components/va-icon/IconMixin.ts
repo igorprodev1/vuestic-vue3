@@ -73,22 +73,22 @@ export class IconMixin extends Mixins(
   IconMixinContextableProps,
 ) {
   get icon () {
-    // return (this as any).getIcon((this as any).c_name)  ---- old
-    return (this as any).getIcon()
+    // return this.getIcon(this.c_name)  ---- old
+    return this.getIcon()
   }
 
   getIcon (): any {
-    if (!(this as any).c_name) {
+    if (!this.c_name) {
       return null
     }
 
-    if ((this as any).c_iconsConfig.icons && !((this as any).c_name in (this as any).c_iconsConfig.icons)) {
-      throw new Error(`Icon config for icon '${(this as any).c_name}' not found`)
+    if (this.c_iconsConfig.icons && !(this.c_name in this.c_iconsConfig.icons)) {
+      throw new Error(`Icon config for icon '${this.c_name}' not found`)
     }
 
-    const iconConfig = (this as any).c_iconsConfig.icons[(this as any).c_name]
+    const iconConfig = this.c_iconsConfig.icons[this.c_name]
     const iconFont = iconConfig.font || // from icon alias config
-      (this as any).c_iconsConfig.defaultFont // from icon component context config
+      this.c_iconsConfig.defaultFont // from icon component context config
 
     return {
       iconClass: getClass(iconConfig, iconFont),
