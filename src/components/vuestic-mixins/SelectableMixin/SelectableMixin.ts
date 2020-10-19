@@ -20,7 +20,7 @@ const PropsMixin = makeContextablePropsMixin(componentProps)
 
 
 @Options({
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'focus', 'blur'],
 })
 export class SelectableMixin extends mixins(
   PropsMixin,

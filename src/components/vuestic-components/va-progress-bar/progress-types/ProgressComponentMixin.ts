@@ -3,7 +3,7 @@ import { makeContextablePropsMixin } from '../../../context-test/context-provide
 import { Mixins, Component } from 'vue-property-decorator'
 
 const ProgressMixinContextableProps = makeContextablePropsMixin({
-  value: { type: Number, default: 0 },
+  modelValue: { type: Number, default: 0 },
   color: { type: String, default: 'primary' },
   // If 'indeterminate' is 'true' 'value' prop will be ignored.
   indeterminate: { type: Boolean, default: false },

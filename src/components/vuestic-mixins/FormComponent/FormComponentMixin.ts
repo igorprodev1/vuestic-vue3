@@ -36,7 +36,7 @@ const PropsMixin = makeContextablePropsMixin(componentProps)
       type: [String, Number],
       default: undefined
     },
-    value: {
+    modelValue: {
       validator: () => {
         throw new Error('ValidateMixin: `value` prop should be defined in component.')
       },

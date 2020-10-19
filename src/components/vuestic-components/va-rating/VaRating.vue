@@ -86,7 +86,7 @@ import { StatefulMixin } from '../../vuestic-mixins/StatefulMixin/StatefulMixin'
 import { Options } from 'vue-class-component'
 
 const RatingPropsMixin = makeContextablePropsMixin({
-  value: { type: Number, default: 0 },
+  modelValue: { type: Number, default: 0 },
   icon: { type: String, default: 'star' },
   halfIcon: { type: String, default: 'star_half' },
   emptyIcon: { type: String, default: 'star_empty' },

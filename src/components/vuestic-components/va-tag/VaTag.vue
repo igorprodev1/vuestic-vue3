@@ -55,7 +55,7 @@ import { makeContextablePropsMixin } from '../../context-test/context-provide/Co
 import { Options } from 'vue-class-component'
 
 const TagPropsMixin = makeContextablePropsMixin({
-  value: { type: Boolean, default: true },
+  modelValue: { type: Boolean, default: true },
   closeable: { type: Boolean, default: false },
   color: { type: String, default: '' },
   outline: { type: Boolean, default: false },

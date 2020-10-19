@@ -77,7 +77,7 @@ import { SizeMixin } from '../../../mixins/SizeMixin'
 import { Options } from 'vue-class-component'
 
 const ButtonPropsMixin = makeContextablePropsMixin({
-  value: { type: Boolean },
+  modelValue: { type: Boolean },
   outline: { type: Boolean, default: false },
   disableButton: { type: Boolean, default: false },
   disableDropdown: { type: Boolean, default: false },

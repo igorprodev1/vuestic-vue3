@@ -3,7 +3,7 @@ import { mixins, Options } from 'vue-class-component';
 import { makeContextablePropsMixin } from '../../context-test/context-provide/ContextPlugin'
 
 const componentProps = {
-  value: {
+  modelValue: {
     type: undefined,
     default: undefined,
   },

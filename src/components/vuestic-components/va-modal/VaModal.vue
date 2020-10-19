@@ -94,7 +94,7 @@ import ClickOutsideMixin, {
 import { Options } from 'vue-class-component'
 
 const ModalPropsMixin = makeContextablePropsMixin({
-  value: { type: Boolean, default: false },
+  modelValue: { type: Boolean, default: false },
   title: { type: String, default: '' },
   message: { type: String, default: '' },
   okText: { type: String, default: 'OK' },

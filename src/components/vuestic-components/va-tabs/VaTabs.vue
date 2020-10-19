@@ -71,7 +71,7 @@ import { StatefulMixin } from '../../vuestic-mixins/StatefulMixin/StatefulMixin'
 import { Options } from 'vue-class-component'
 
 const TabsPropsMixin = makeContextablePropsMixin({
-  value: { type: [String, Number], default: null },
+  modelValue: { type: [String, Number], default: null },
   left: { type: Boolean, default: true },
   right: { type: Boolean, default: false },
   center: { type: Boolean, default: false },

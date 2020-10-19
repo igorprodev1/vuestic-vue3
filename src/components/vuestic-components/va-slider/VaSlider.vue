@@ -187,7 +187,7 @@ import { Options } from 'vue-class-component'
 
 const SliderPropsMixin = makeContextablePropsMixin({
   range: { type: Boolean, default: false },
-  value: { type: [Number, Array], default: () => [] },
+  modelValue: { type: [Number, Array], default: () => [] },
   trackLabel: { type: String, default: '' },
   color: { type: String, default: '' },
   trackColor: { type: String, default: '' },

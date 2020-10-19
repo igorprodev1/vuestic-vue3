@@ -125,7 +125,7 @@ import { Options } from 'vue-class-component'
 
 const InputPropsMixin = makeContextablePropsMixin({
   color: { type: String, default: '' },
-  value: { type: [String, Number], default: '' },
+  modelValue: { type: [String, Number], default: '' },
   label: { type: String, default: '' },
   placeholder: { type: String, default: '' },
   type: { type: String, default: 'text' },

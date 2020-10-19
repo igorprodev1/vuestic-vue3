@@ -40,7 +40,7 @@ import { Options } from 'vue-class-component'
   name: 'VaRatingItem',
   components: { VaIcon },
   props: {
-    value: { type: Number, default: 0 },
+    modelValue: { type: Number, default: 0 },
     filledIconName: { type: String, default: 'star' },
     halfIconName: { type: String, default: 'star_half' },
     emptyIconName: { type: String, default: 'star_empty' },

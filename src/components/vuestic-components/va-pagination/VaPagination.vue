@@ -99,7 +99,7 @@ import { ColorThemeMixin } from '../../../services/ColorThemePlugin'
 import { Options } from 'vue-class-component'
 
 const PaginationPropsMixin = makeContextablePropsMixin({
-  value: { type: Number, default: 1 },
+  modelValue: { type: Number, default: 1 },
   visiblePages: { type: Number, default: 0 },
   pages: { type: Number, default: 0 },
   disabled: { type: Boolean, default: false },

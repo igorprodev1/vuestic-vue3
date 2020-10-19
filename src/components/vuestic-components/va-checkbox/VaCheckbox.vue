@@ -69,7 +69,7 @@ import { makeContextablePropsMixin } from '../../context-test/context-provide/Co
 import { Options } from 'vue-class-component'
 
 const CheckboxPropsMixin = makeContextablePropsMixin({
-  value: { type: [Boolean, Array, String, Object], default: false },
+  modelValue: { type: [Boolean, Array, String, Object], default: false },
   checkedIcon: { type: String, default: 'check' },
   indeterminateIcon: { type: String, default: 'remove' },
 })

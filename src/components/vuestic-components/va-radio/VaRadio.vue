@@ -44,7 +44,7 @@ import { ColorThemeMixin } from '../../../services/ColorThemePlugin'
 import { makeContextablePropsMixin } from '../../context-test/context-provide/ContextPlugin'
 
 const RadioPropsMixin = makeContextablePropsMixin({
-  value: { type: [Object, String, Number, Boolean], default: null },
+  modelValue: { type: [Object, String, Number, Boolean], default: null },
   option: { type: [Object, String, Number, Boolean], default: null },
   name: { type: [String, Number], default: '' },
   disabled: { type: Boolean, default: false },

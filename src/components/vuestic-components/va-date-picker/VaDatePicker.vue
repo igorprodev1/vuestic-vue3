@@ -45,7 +45,7 @@ export default {
   mixins: [
     makeContextablePropsMixin(
       {
-        value: {
+        modelValue: {
           type: [String, Object, Number],
           default: '',
         },

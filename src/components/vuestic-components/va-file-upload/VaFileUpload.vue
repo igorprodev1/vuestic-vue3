@@ -70,7 +70,7 @@ const FileUploadPropsMixin = makeContextablePropsMixin({
   },
   fileTypes: { type: String, default: '' },
   dropzone: { type: Boolean, default: false },
-  value: { type: Array, default: () => [] },
+  modelValue: { type: Array, default: () => [] },
   color: { type: String, default: 'success' },
   disabled: { type: Boolean, default: false },
 })

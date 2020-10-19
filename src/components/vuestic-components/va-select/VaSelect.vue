@@ -181,7 +181,7 @@ import { Options } from 'vue-class-component'
 const positions: string[] = ['top', 'bottom']
 
 const PropsMixin = makeContextablePropsMixin({
-  value: { type: [String, Number, Object, Array], default: '' },
+  modelValue: { type: [String, Number, Object, Array], default: '' },
   label: { type: String, default: '' },
   placeholder: { type: String, default: '' },
   position: {

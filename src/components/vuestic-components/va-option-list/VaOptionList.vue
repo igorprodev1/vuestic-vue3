@@ -85,7 +85,7 @@ const OptionListPropsMixin = makeContextablePropsMixin({
   name: { type: String, default: generateUuid },
   color: { type: String, default: 'primary' },
   leftLabel: { type: Boolean, default: false },
-  value: { type: [String, Number, Object, Array] },
+  modelValue: { type: [String, Number, Object, Array] },
 })
 
 @Options({
