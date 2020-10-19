@@ -63,7 +63,7 @@ export default class VaRadio extends Mixins(
   RadioPropsMixin,
 ) {
   get isActive () {
-    return this.value === this.option
+    return this.modelValue === this.option
   }
 
   get computedClass () {
