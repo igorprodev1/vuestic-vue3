@@ -45,7 +45,7 @@
             class="VbPage__menu__search__icon"
             @click="clearSearch()"
           >
-            <!-- <font-awesome-icon icon="times"/> -->
+            <font-awesome-icon icon="times"/>
           </div>
         </form>
       </div>

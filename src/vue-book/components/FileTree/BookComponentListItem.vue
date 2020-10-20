@@ -5,10 +5,10 @@
     :class="isActive && 'BookComponentListItem--active'"
     @click="select()"
   >
-    <!-- <font-awesome-icon
+    <font-awesome-icon
       class="BookComponentListItem__icon"
       icon="file"
-    /> -->
+    />
     <span class="BookComponentListItem__file-name">
       {{ name }}
     </span>

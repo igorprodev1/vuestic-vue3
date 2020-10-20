@@ -4,7 +4,7 @@
     :class="{'ComButtonIcon--active': active}"
   >
     <!-- v-on="$listeners" -->
-    <!-- <font-awesome-icon icon="server" /> -->
+    <font-awesome-icon :icon="icon" />
   </div>
 </template>
 

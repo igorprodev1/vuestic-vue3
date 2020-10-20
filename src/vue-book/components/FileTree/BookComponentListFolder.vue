@@ -2,20 +2,20 @@
   <div class="BookComponentListFolder">
     <div class="BookComponentListFolder__header" @click="folder.toggle()">
       <div class="BookComponentListFolder__header__caret">
-        <!-- <font-awesome-icon
+        <font-awesome-icon
           v-if="folder.isOpen"
           icon="caret-down"
-        /> -->
-        <!-- <font-awesome-icon
+        />
+        <font-awesome-icon
           v-else
           icon="caret-right"
-        /> -->
+        />
       </div>
 
-      <!-- <font-awesome-icon
+      <font-awesome-icon
         class="BookComponentListFolder__header__icon"
         icon="folder"
-      /> -->
+      />
 
       <div class="BookComponentListFolder__title">
         <span>{{folder.name}}</span>

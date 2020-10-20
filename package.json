@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "@fortawesome/vue-fontawesome": "^3.0.0-2",
     "@popperjs/core": "^2.5.3",
     "approximate-number": "^2.0.0",
     "asva-executors": "^0.1.23",
