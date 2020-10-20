@@ -57,7 +57,6 @@ export default class VaInputWrapper extends Mixins(
   InputWrapperPropsMixin,
 ) {
   get messagesComputed () {
-    console.log('get messagesComputed', this.c_error, this.c_errorMessages, this.messages)
     return this.c_error ? this.c_errorMessages : this.messages
   }
 
