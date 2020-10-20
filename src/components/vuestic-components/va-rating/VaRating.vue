@@ -23,7 +23,7 @@
           :color="c_color"
           :empty-icon-color="c_unselectedColor"
           :tabindex="tabIndex"
-          :value="getItemValue(number)"
+          :modelValue="getItemValue(number)"
           @hover="onHover(number, $event)"
           @click="onItemSelected(number, $event)"
         >
@@ -59,7 +59,7 @@
           :color="c_color"
           :empty-icon-color="c_unselectedColor"
           :tabindex="tabIndex"
-          :value="getItemValue(itemNumber)"
+          :modelValue="getItemValue(itemNumber)"
           @hover="onHover(itemNumber, $event)"
           @click="onItemSelected(itemNumber, $event)"
         />

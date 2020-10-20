@@ -28,7 +28,7 @@ const PropsMixin = makeContextablePropsMixin({
 })
 
 export class TextareaMixin extends Mixins(PropsMixin) {
-  @Watch('value')
+  @Watch('modelValue')
   onValueChanged (): void {
     // only for textarea
     if (this.isTextarea) {

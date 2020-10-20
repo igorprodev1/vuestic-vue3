@@ -2,7 +2,6 @@
   <component
     class="va-form"
     :is="tag"
-    v-on="$listeners"
   >
     <slot />
   </component>
@@ -15,12 +14,12 @@ import { Mixins } from 'vue-property-decorator'
 import { makeContextablePropsMixin } from '../../context-test/context-provide/ContextPlugin'
 
 const getNestedFormElements = (vm: any, elements: any = []) => {
-  vm.$children.forEach((child: any) => {
+  vm.$slots.default().forEach((child: any) => {
     if (child.isFormComponent) {
       elements.push(child)
     }
 
-    child.$children.length > 0 && getNestedFormElements(child, elements)
+    child.$slots && child.$slots.default().length > 0 && getNestedFormElements(child, elements)
   })
 
   return elements
@@ -33,6 +32,7 @@ const FormPropsMixin = makeContextablePropsMixin({
 
 @Options({
   name: 'VaForm',
+  emits: ['validation'],
 })
 export default class VaForm extends Mixins(
   FormPropsMixin,

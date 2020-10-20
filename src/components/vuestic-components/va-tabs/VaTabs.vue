@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Watch } from 'vue-property-decorator'
+import { Mixins, Watch } from 'vue-property-decorator'
 
 import VaButton from '../va-button/VaButton.vue'
 import VaTab from './VaTab.vue'
@@ -162,7 +162,7 @@ export default class VaTabs extends Mixins(
     return this.tabs[this.tabs.length - 1].rightSidePosition <= this.tabsContentOffset + (this as any).$refs.container.clientWidth
   }
 
-  @Watch('value')
+  @Watch('modelValue')
   onValueChanged () {
     this.updateTabsState()
   }

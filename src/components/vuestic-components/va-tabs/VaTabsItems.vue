@@ -10,9 +10,7 @@ export default class VaTabsItems extends Vue {
     return h(
       'div',
       {
-        attrs: {
-          class: 'va-tabs__tabs-items',
-        },
+        class: 'va-tabs__tabs-items',
       },
       (this as any).$slots.default().filter((e: any) => {
         if (e.componentOptions) {

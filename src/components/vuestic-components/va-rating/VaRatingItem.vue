@@ -55,7 +55,7 @@ export default class VaRatingItem extends Mixins(ColorThemeMixin) {
   private isHovered = false
   private isFocused = false
   private shouldEmitClick = false
-  private hoveredValue: RatingValue = this.value
+  private hoveredValue: RatingValue = this.modelValue
 
   private get computedIconName (): string {
     if (this.halves && this.valueProxy === RatingValue.HALF) {
@@ -72,7 +72,7 @@ export default class VaRatingItem extends Mixins(ColorThemeMixin) {
       : this.colorComputed
   }
 
-  @Watch('value')
+  @Watch('modelValue')
   private onValueChange (newVal: RatingValue) {
     this.hoveredValue = newVal
   }
@@ -88,7 +88,7 @@ export default class VaRatingItem extends Mixins(ColorThemeMixin) {
   }
 
   private get valueProxy (): RatingValue {
-    return this.isHovered ? this.hoveredValue : this.value
+    return this.isHovered ? this.hoveredValue : this.modelValue
   }
 
   private onClick (cursorPosition: MouseEvent) {
@@ -121,7 +121,7 @@ export default class VaRatingItem extends Mixins(ColorThemeMixin) {
   }
 
   private removeHover () {
-    this.valueProxy = this.value
+    this.valueProxy = this.modelValue
     this.isHovered = false
   }
 }
