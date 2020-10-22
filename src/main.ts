@@ -7,6 +7,7 @@ import { ColorThemePlugin } from './services/ColorThemePlugin'
 import { getContext } from './components/context-test/context-provide/context'
 import { VueBookComponents, createRoute } from './vue-book/app'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import ToastInstall from './components/vuestic-components/va-toast/install'
 
 const app = createApp(App)
 
@@ -26,10 +27,12 @@ const router = createRouter({
   routes,
 })
 
+
 app.use(ColorThemePlugin)
 app.use(VueBookComponents)
+app.use(ToastInstall)
 app.use(router)
-// app.use(ColorThemePlugin)
+
 app.use(ContextPlugin, getContext())
 
 app.mount('#app')
