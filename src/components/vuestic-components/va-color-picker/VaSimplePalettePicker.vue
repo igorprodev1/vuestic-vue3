@@ -5,7 +5,7 @@
         v-for="(color, index) in palette"
         :key="index"
         :color="color"
-        @click.native="handlerClick(color)"
+        @click="handlerClick(color)"
         :selected="isSelected(color)"
       />
     </ul>

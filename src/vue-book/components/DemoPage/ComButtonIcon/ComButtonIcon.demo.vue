@@ -2,12 +2,12 @@
   <VbDemo>
     <VbCard>
       <com-button-icon
-        @click.native="active = ! active"
+        @click="active = ! active"
         icon="server"
         :active="active"
       />
       <com-button-icon
-        @click.native="active = ! active"
+        @click="active = ! active"
         icon="server"
         :active="! active"
       />

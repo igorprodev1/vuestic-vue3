@@ -129,7 +129,7 @@
               <div v-if="showClearIcon" class="va-select__icon">
                 <va-icon
                   :name="clearIcon"
-                  @click.native.stop="reset()"
+                  @click.stop="reset()"
                 />
               </div>
 

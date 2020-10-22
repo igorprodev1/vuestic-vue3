@@ -34,7 +34,7 @@
         name="delete_outline"
         color="danger"
         class="va-file-upload-gallery-item__delete"
-        @click.native="removeImage"
+        @click="removeImage"
       />
     </div>
   </div>

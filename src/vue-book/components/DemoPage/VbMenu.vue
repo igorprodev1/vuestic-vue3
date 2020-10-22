@@ -2,7 +2,7 @@
   <div class="VbMenu">
     <ComButtonIcon
       class="VuebookMenu__icon"
-      @click.native="config.mode = DemoPageMode.Tree"
+      @click="config.mode = DemoPageMode.Tree"
       title="Mode: Tree"
       icon="server"
       :active="config.mode === DemoPageMode.Tree"
@@ -10,7 +10,7 @@
 
     <ComButtonIcon
       class="VuebookMenu__icon"
-      @click.native="config.mode = DemoPageMode.Search"
+      @click="config.mode = DemoPageMode.Search"
       title="Mode: Search"
       icon="search"
       :active="config.mode === DemoPageMode.Search"
@@ -21,7 +21,7 @@
     <template v-if="config.mode === DemoPageMode.Tree">
       <ComButtonIcon
         v-if="currentFile"
-        @click.native="$emit('openFolder')"
+        @click="$emit('openFolder')"
         title="Expand from Current File"
         icon="dot-circle"
       />
