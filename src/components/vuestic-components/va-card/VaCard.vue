@@ -42,6 +42,7 @@ const CardPropsMixin = makeContextablePropsMixin({
   stripe: { type: Boolean, default: false },
   stripeColor: { type: String, default: '' },
   gradient: { type: Boolean, default: false },
+  dark: { type: Boolean, default: false },
 })
 
 @Options({
