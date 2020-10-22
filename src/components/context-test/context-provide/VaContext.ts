@@ -3,6 +3,7 @@ import { Inject, Prop } from 'vue-property-decorator';
 import { ContextProviderKey, mergeConfigs } from './ContextPlugin';
 
 
+@Options({})
 export default class VaContext extends Vue {
   @Prop({ type: Object, default: () => ({}) }) config: any
 
