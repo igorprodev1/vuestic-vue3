@@ -64,8 +64,8 @@ const FileUploadPropsMixin = makeContextablePropsMixin({
   type: {
     type: String,
     default: 'list',
-    validator (value: string) {
-      return ['list', 'gallery', 'single'].includes(value)
+    validator (modelValue: string) {
+      return ['list', 'gallery', 'single'].includes(modelValue)
     },
   },
   fileTypes: { type: String, default: '' },
@@ -97,7 +97,7 @@ export default class VaFileUpload extends Mixins(
   }
 
   get files () {
-    return this.value
+    return this.modelValue
   }
 
   set files (files) {
