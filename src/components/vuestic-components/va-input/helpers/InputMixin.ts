@@ -36,7 +36,7 @@ const PropsMixin = makeContextablePropsMixin({
 
 export class InputMixin extends Mixins(PropsMixin) {
   inputElement: Cleave | null = null
-  eventListeners: any = null
+  eventListeners: any = {}
   isFocused = false
 
   @Watch('mask', { deep: true })
