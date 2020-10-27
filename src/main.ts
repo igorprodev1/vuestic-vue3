@@ -5,7 +5,8 @@ import { ContextPlugin } from './components/context-test/context-provide/Context
 import { ColorThemePlugin } from './services/ColorThemePlugin'
 // @ts-ignore
 import { getContext } from './components/context-test/context-provide/context'
-import { VueBookComponents, createRoute } from './vue-book/app'
+//@ts-ignore
+import { VueBookComponents, createRoute } from 'vue-book'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import ToastInstall from './components/vuestic-components/va-toast/install'
 
