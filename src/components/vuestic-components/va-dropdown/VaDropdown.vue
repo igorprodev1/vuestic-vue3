@@ -262,7 +262,7 @@ export default class VaDropdown extends Vue {
     this.handlePopperInstance()
   }
 
-  beforeDestroy (): void {
+  beforeUnmaunt (): void {
     this.unregisterClickOutsideListener()
     this.removePopper()
   }

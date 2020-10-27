@@ -183,7 +183,7 @@ export default class VaInfiniteScroll extends Mixins(
     })
   }
 
-  beforeDestroy () {
+  beforeUnmaunt () {
     if (!this.disabled) {
       this.scrollTargetElement.removeEventListener(
         'scroll',

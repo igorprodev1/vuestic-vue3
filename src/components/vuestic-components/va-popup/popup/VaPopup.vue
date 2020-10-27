@@ -119,7 +119,7 @@ export default {
 
     this.value && this.show()
   },
-  beforeDestroy () {
+  beforeUnmaunt () {
     this.showing && this.__cleanup()
     if (this.anchorClick && this.anchorEl) {
       this.anchorEl.removeEventListener('click', this.toggle)

@@ -177,7 +177,7 @@ export class InputMixin extends Mixins(PropsMixin) {
   /**
    * Free up memory
    */
-  beforeDestroy () {
+  beforeUnmaunt () {
     this.destroyCleaveInstance()
   }
 

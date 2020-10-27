@@ -53,7 +53,7 @@ export default class VaMediumEditor extends Vue {
     this.initEditor()
   }
 
-  beforeDestroy () {
+  beforeUnmaunt () {
     this.destroyEditor()
   }
 }

@@ -171,7 +171,7 @@ export default class VaToast extends Mixins(
     document.addEventListener('keydown', this.onKeydown)
   }
 
-  beforeDestroy () {
+  beforeUnmaunt () {
     document.removeEventListener('keydown', this.onKeydown)
   }
 }

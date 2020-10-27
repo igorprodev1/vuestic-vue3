@@ -114,7 +114,7 @@ export default {
       }
     },
   },
-  beforeDestroy () {
+  beforeUnmaunt () {
     if (this.showing) {
       this.showPromise && this.showPromiseReject()
       this.hidePromise && this.hidePromiseReject()

@@ -797,7 +797,7 @@ export default class VaSlider extends Mixins(
     })
   }
 
-  beforeDestroy () {
+  beforeUnmaunt () {
     this.unbindEvents()
   }
 }
