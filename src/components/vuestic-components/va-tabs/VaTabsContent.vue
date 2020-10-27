@@ -11,8 +11,8 @@ export default class VaTabsContent extends Vue {
     // ATM renders all content that is not tabs
     return h(
       'div', (this as any).$slots.default().filter((e: any) => {
-        if (e.componentOptions) {
-          return e.componentOptions.Ctor.options.name !== 'VaTab'
+        if (e.type) {
+          return e.type.name !== 'VaTab'
         }
         return true
       }),
