@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+import { defineComponent, reactive } from 'vue'
 import { Vue, Options } from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
 
@@ -16,12 +17,8 @@ import { Prop } from 'vue-property-decorator'
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const parent = this as any
     return {
-      va: new Vue({
-        computed: {
-          color () {
-            return parent.color
-          },
-        },
+      va: reactive({
+        color: parent.color,
       }),
     }
   },
