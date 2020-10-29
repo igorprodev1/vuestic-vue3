@@ -973,6 +973,11 @@
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
+"@tehnorg/vue-class-component@^8.0.0-beta.5":
+  version "8.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@tehnorg/vue-class-component/-/vue-class-component-8.0.0-beta.5.tgz#b3685285689974074309dad3ee615135cc6c3cd1"
+  integrity sha512-rVWt8rfxTdB46ihnF3hda4uD6ADv1fOfl9PBrdudhxq99vwTP/5wyynnwzqzPGoc8D1/V4Z9qtMNRSRzrI/IiA==
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
@@ -6208,6 +6213,11 @@ mississippi@^3.0.0:
     stream-each "^1.1.0"
     through2 "^2.0.0"
 
+mitt@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mitt/-/mitt-2.1.0.tgz#f740577c23176c6205b121b2973514eade1b2230"
+  integrity sha512-ILj2TpLiysu2wkBbWjAmww7TkZb65aiQO+DkVdUTBpBXq+MHYiETENkKFMtsJZX1Lf4pe4QOrTSjIfUwN5lRdg==
+
 mixin-deep@^1.2.0:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
@@ -8755,6 +8765,11 @@ tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
+tslib@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
+  integrity sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
+
 tslint@^5.20.1:
   version "5.20.1"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.20.1.tgz#e401e8aeda0152bc44dd07e614034f3f80c67b7d"
@@ -9088,20 +9103,17 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-book@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/vue-book/-/vue-book-0.0.19.tgz#22ece598d5d83ff2175996f399742e68e7b51b84"
-  integrity sha512-/QDritkeJQDjifUmhKgBzAK5cgu7v+/jLJ4TBzkUIWGtHXzaYSzYW4zd9/zhm+6e7eGFGY4U4Ch8b5sbAoLyCQ==
+vue-book@0.2.0-alpha.0:
+  version "0.2.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/vue-book/-/vue-book-0.2.0-alpha.0.tgz#a46722bb0932c67cc842cb8e26357b4ddc8a61b6"
+  integrity sha512-pwXVmTpneeAQGZ9q1OtViqGtgAaTIu+7cGGDe+IC+jeb8rWT7pOxOR0WIDJzE5Gl5zxbj2YGP85Hp1aJiNRxNg==
+  dependencies:
+    tslib "^2.0.3"
 
 vue-bulma-expanding@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/vue-bulma-expanding/-/vue-bulma-expanding-0.0.1.tgz#fcf71c2e8ef09157175bd5187eb71b3ce75a2229"
   integrity sha1-/PccLo7wkVcXW9UYfrcbPOdaIik=
-
-vue-class-component@^8.0.0-beta.4:
-  version "8.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-8.0.0-beta.4.tgz#bff95cdd44eb450a4a4e54b69da22099613d8071"
-  integrity sha512-+QXBhVH/Mz8dEC+IU7e8XXM54Tn0Aj9/saybeuK8XmhQiJlcijCB8kB7CYpBEMpHWaA+DoLr6LvHMbclYRCwZQ==
 
 vue-color@^2.7.1:
   version "2.7.1"
