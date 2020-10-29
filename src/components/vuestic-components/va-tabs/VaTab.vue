@@ -92,6 +92,8 @@ export default class VaTab extends Mixins(
 
   onTabClick () {
     this.tabsHanler.eventEmitter.emit('click:tab', this)
+    // this.tabsHanler.selectTab(this).bind(this)
+    // (this as any).tabsHanler.selectTab.call(this.tabsHanler, this)
     this.$emit('click')
   }
 

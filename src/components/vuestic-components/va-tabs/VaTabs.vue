@@ -171,6 +171,7 @@ export default class VaTabs extends Mixins(
   }
 
   selectTab (tab: any) {
+    console.log('this.$props', this.$props)
     this.valueComputed = tab.$props.name || tab.id
     if (this.stateful) {
       this.updateTabsState()
