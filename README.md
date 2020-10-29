@@ -1,3 +1,11 @@
+# Important!!!
+Need to compile `vue-class-componet` from this
+`git clone --branch next https://github.com/vuejs/vue-class-component.git`
+`yarn`
+`yarn build` 
+Then you need to replace in the project's folder `node_modules/vue-class-component/dist` with the built `dist`.
+This is because we need a critical fix vuejs/vue-class-component#467
+
 # vue-cli
 
 
